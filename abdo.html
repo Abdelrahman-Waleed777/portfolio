@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Portfolio - Abdelrahman Walid</title>
+<style>
+  /* ====== Base Styles ====== */
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #0d1b2a;
+    color: #e0e1dd;
+    scroll-behavior: smooth;
+  }
+
+  header {
+    background-color: #1b263b;
+    position: relative;
+  }
+
+  header h1 {
+    color: #e0e1dd;
+    margin: 0;
+  }
+
+  header p {
+    color: #778da9;
+    margin: 5px 0;
+  }
+
+  /* ====== Navbar ====== */
+  nav {
+    position: fixed;
+    top: 20px;
+    right: 30px;
+    background: rgba(27,38,59,0.9);
+    border-radius: 10px;
+    padding: 10px 15px;
+    z-index: 100;
+    display: flex;
+    gap: 15px;
+  }
+
+  nav a {
+    color: #00aaff;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s;
+  }
+
+  nav a:hover {
+    color: #00ffff;
+  }
+
+  section {
+    padding: 60px 20px;
+    max-width: 1000px;
+    margin: auto;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  }
+
+  section.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  h2 {
+    color: #00aaff;
+    border-bottom: 2px solid #00aaff;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    transition: text-shadow 0.3s;
+  }
+
+  h2:hover {
+    text-shadow: 0 0 12px #00aaff, 0 0 20px #00ffff;
+  }
+
+  .skills, .tools, .projects {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+  }
+
+  .card {
+    background: #1b263b;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+
+  .card:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 0 20px rgba(0,170,255,0.5);
+  }
+
+  .card h3 {
+    margin-top: 0;
+    color: #f1faee;
+  }
+
+  /* Contact links */
+  .contact-card {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    align-items: center;
+    text-align: center;
+  }
+
+  .contact-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 18px;
+    border-radius: 8px;
+    background: linear-gradient(90deg, rgba(0,170,255,0.12), rgba(0,170,255,0.06));
+    border: 1px solid rgba(0,170,255,0.12);
+    color: #e0e1dd;
+    text-decoration: none;
+    font-weight: 600;
+    transition: transform 0.3s, background 0.3s;
+  }
+
+  .contact-link:hover {
+    transform: translateY(-4px) scale(1.05);
+    background: linear-gradient(90deg, rgba(0,170,255,0.18), rgba(0,170,255,0.08));
+  }
+
+  footer {
+    background-color: #1b263b;
+    text-align: center;
+    padding: 15px;
+    margin-top: 30px;
+    font-size: 14px;
+    color: #778da9;
+  }
+
+  @media (max-width: 800px) {
+    section { padding: 40px 16px; }
+    nav { flex-direction: column; right: 10px; top: 10px; }
+    header div { flex-direction: column; text-align: center; gap: 15px; }
+  }
+
+  /* ====== Animations ====== */
+  @keyframes fadeInLeft {
+    0% { opacity: 0; transform: translateX(-50px); }
+    100% { opacity: 1; transform: translateX(0); }
+  }
+
+  @keyframes fadeInDown {
+    0% { opacity: 0; transform: translateY(-20px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
+</style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#tools">Tools</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <!-- Header with image on left -->
+  <header>
+    <div style="display: flex; align-items: center; gap: 20px; justify-content: center; padding: 20px;">
+      <img src="me.jpg" alt="Abdelrahman Walid" 
+           style="width: 180px; height: 180px; border-radius: 50%; object-fit: cover; 
+                  border: 4px solid #00aaff; box-shadow: 0 0 20px rgba(0,170,255,0.5);
+                  animation: fadeInLeft 1s ease forwards;">
+      <div style="text-align: left;">
+        <h1>Abdelrahman Walid</h1>
+        <p>Penetration Tester & programmer</p>
+      </div>
+    </div>
+  </header>
+
+  <!-- About Me Section -->
+  <section id="about">
+    <h2>About Me</h2>
+    <p>
+      I am passionate about cyber security, with a strong interest in penetration testing, network security, and ethical hacking. 
+      I enjoy exploring vulnerabilities, learning new security tools, and applying my skills to secure systems.
+    </p>
+  </section>
+
+  <!-- Skills Section -->
+  <section id="skills">
+    <h2>Skills</h2>
+    <div class="skills">
+      <div class="card"><h3>Web Penetration Testing</h3></div>
+      <div class="card"><h3>Network Penetration</h3></div>
+      <div class="card"><h3>Linux & Windows Administration</h3></div>
+      <div class="card"><h3>Vulnerability Assessment</h3></div>
+      <div class="card"><h3>Reporting</h3></div>
+      <div class="card"><h3>Programming</h3><p>Python, JavaScript, HTML, CSS</p></div>
+    </div>
+  </section>
+
+  <!-- Tools Section -->
+  <section id="tools">
+    <h2>Tools</h2>
+    <div class="tools">
+      <div class="card"><h3>Nmap</h3></div>
+      <div class="card"><h3>Wireshark</h3></div>
+      <div class="card"><h3>Metasploit</h3></div>
+      <div class="card"><h3>Nessus</h3></div>
+      <div class="card"><h3>Burp Suite</h3></div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="projects">
+      <div class="card">
+        <h3>Local Network Penetration Test</h3>
+        <p>Conducted a penetration test on a small office network using Nmap, Metasploit, and Nessus to identify vulnerabilities.</p>
+      </div>
+      <div class="card">
+        <h3>Web Application Security Testing</h3>
+        <p>Performed XSS and SQL injection testing on a demo web application and documented the findings.</p>
+      </div>
+      <div class="card">
+        <h3>Automated Vulnerability Reports</h3>
+        <p>Created scripts to automate vulnerability scanning and reporting using Python and Nmap results.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Me Section -->
+  <section id="contact">
+    <h2>Contact Me</h2>
+    <div class="card contact-card" style="max-width: 600px; margin: auto;">
+      <a class="contact-link" href="tel:+20-01556986021">📞 +20-01556986021</a>
+      <a class="contact-link" href="mailto:abdelrahmanii524@gmail.com">✉️ abdelrahmanii524@gmail.com</a>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 - Abdelrahman Walid | Portfolio</p>
+  </footer>
+
+  <!-- Scroll Animation Script -->
+  <script>
+    const sections = document.querySelectorAll('section');
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.2 });
+
+    sections.forEach(section => observer.observe(section));
+  </script>
+</body>
+</html>
